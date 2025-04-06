@@ -9,8 +9,10 @@ export interface Curso {
   activo: boolean;
 }
 
+const username = process.env.NEXT_PUBLIC_API_USERNAME || 'admin';
+const password = process.env.NEXT_PUBLIC_API_PASSWORD || 'admin';
 const authHeader = {
-  Authorization: 'Basic ' + btoa('admin:admin'),
+  Authorization: 'Basic ' + btoa(`${username}:${password}`),
 };
 
 // Obtener la lista de cursos
