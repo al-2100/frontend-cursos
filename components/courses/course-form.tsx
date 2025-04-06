@@ -5,7 +5,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { FormField } from '@/components/ui/form-field';
 import { Toggle } from '@/components/ui/toggle';
 import { DialogFooter } from '@/components/ui/dialog';
-import { Curso } from '@/services/api';
 
 interface CourseFormData {
   nombre: string;
@@ -19,7 +18,7 @@ interface CourseFormProps {
   initialData: CourseFormData;
   onSubmit: (data: CourseFormData) => void;
   isEditing: boolean;
-  isSubmitting?: boolean; // nuevo prop
+  isSubmitting?: boolean;
 }
 
 export function CourseForm({ initialData, onSubmit, isEditing, isSubmitting = false }: CourseFormProps) {

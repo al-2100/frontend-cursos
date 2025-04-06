@@ -13,6 +13,14 @@ import {
 import { CourseTable } from '@/components/courses/course-table';
 import { CourseForm } from '@/components/courses/course-form';
 
+interface CourseFormData {
+  nombre: string;
+  descripcion: string;
+  fecha_inicio: string;
+  fecha_fin: string;
+  activo: boolean;
+}
+
 export default function CursosPage() {
   const queryClient = useQueryClient();
 
@@ -70,7 +78,7 @@ export default function CursosPage() {
     setOpen(true);
   };
 
-  const handleSubmit = (formData: any) => {
+  const handleSubmit = (formData: CourseFormData) => {
     if (editingCurso) {
       updateMutation.mutate({ id: editingCurso.id, data: formData });
     } else {
@@ -82,7 +90,7 @@ export default function CursosPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Gestión de Cursos</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Gestión de Cursos</h1>
       <Button onClick={handleOpenCreate}>Crear Curso</Button>
 
       {isError && <p className="text-red-500 mt-4">Error al cargar cursos.</p>}
