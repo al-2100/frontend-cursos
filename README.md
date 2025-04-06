@@ -14,7 +14,7 @@ Este proyecto es el front-end para gestionar cursos mediante una API. Desarrolla
 
 ## Instalación
 
-### Opción 1: Instalación con Docker
+### Opción 1: Instalación con Docker Compose
 
 1. Clona el repositorio.
    ```
@@ -29,11 +29,7 @@ Este proyecto es el front-end para gestionar cursos mediante una API. Desarrolla
    ```
 3. Construye la imagen Docker:
    ```
-   docker build -t cursos-client .
-   ```
-4. Ejecuta el contenedor:
-   ```
-   docker run --env-file .env -p 3000:3000 cursos-client
+   docker-compose up --build
    ```
 
 ### Opción 2: Instalación sin Docker
