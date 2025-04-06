@@ -1,4 +1,4 @@
-export const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export interface Curso {
   id: string;
@@ -9,8 +9,8 @@ export interface Curso {
   activo: boolean;
 }
 
-const username = process.env.NEXT_PUBLIC_API_USERNAME || 'admin';
-const password = process.env.NEXT_PUBLIC_API_PASSWORD || 'admin';
+const username = process.env.NEXT_PUBLIC_API_USERNAME;
+const password = process.env.NEXT_PUBLIC_API_PASSWORD;
 const authHeader = {
   Authorization: 'Basic ' + btoa(`${username}:${password}`),
 };
