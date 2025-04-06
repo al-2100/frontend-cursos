@@ -19,9 +19,10 @@ interface CourseFormProps {
   initialData: CourseFormData;
   onSubmit: (data: CourseFormData) => void;
   isEditing: boolean;
+  isSubmitting?: boolean; // nuevo prop
 }
 
-export function CourseForm({ initialData, onSubmit, isEditing }: CourseFormProps) {
+export function CourseForm({ initialData, onSubmit, isEditing, isSubmitting = false }: CourseFormProps) {
   const [formData, setFormData] = React.useState<CourseFormData>(initialData);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -81,8 +82,8 @@ export function CourseForm({ initialData, onSubmit, isEditing }: CourseFormProps
       </div>
 
       <DialogFooter>
-        <Button type="submit">
-          {isEditing ? 'Actualizar' : 'Crear'}
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Cargando...' : (isEditing ? 'Actualizar' : 'Crear')}
         </Button>
       </DialogFooter>
     </form>

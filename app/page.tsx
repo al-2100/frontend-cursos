@@ -78,6 +78,8 @@ export default function CursosPage() {
     }
   };
 
+  const isSubmitting = createMutation.status === 'pending' || updateMutation.status === 'pending';
+
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Gestión de Cursos</h1>
@@ -108,6 +110,7 @@ export default function CursosPage() {
             } : defaultFormData}
             onSubmit={handleSubmit}
             isEditing={!!editingCurso}
+            isSubmitting={isSubmitting} // se pasa la carga
           />
         </DialogContent>
       </Dialog>
