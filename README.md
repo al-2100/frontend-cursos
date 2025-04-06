@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto Cursos Client
 
-## Getting Started
+Este proyecto es el front-end para gestionar cursos mediante una API. Desarrollada con Next.js, React y TypeScript.
 
-First, run the development server:
+**Backend:** Puedes visitar el repositorio del frontend en [https://github.com/al-2100/backend-cursos](https://github.com/al-2100/backend-cursos)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tecnologías Usadas
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+## Instalación
+
+### Opción 1: Instalación con Docker
+
+1. Clona el repositorio.
+   ```
+   git clone https://github.com/al-2100/frontend-cursos
+   cd frontend-cursos
+   ```
+2. Configura las variables de entorno en el archivo `.env` (crea uno siguiendo el ejemplo):
+   ```
+   NEXT_PUBLIC_API_URL=...
+   NEXT_PUBLIC_API_USERNAME=...
+   NEXT_PUBLIC_API_PASSWORD=...
+   ```
+3. Construye la imagen Docker:
+   ```
+   docker build -t cursos-client .
+   ```
+4. Ejecuta el contenedor:
+   ```
+   docker run --env-file .env -p 3000:3000 cursos-client
+   ```
+
+### Opción 2: Instalación sin Docker
+
+1. Clona el repositorio.
+   ```
+   git clone https://github.com/al-2100/frontend-cursos
+   cd frontend-cursos
+   ```
+2. Instala las dependencias:
+   ```
+   npm ci
+   ```
+3. Compila el proyecto:
+   ```
+   npm run build
+   ```
+4. Inicia la aplicación:
+   ```
+   npm start
+   ```
+
+## Variables de Entorno
+
+El archivo `.env` debe contener:
+```
+NEXT_PUBLIC_API_URL=...
+NEXT_PUBLIC_API_USERNAME=...
+NEXT_PUBLIC_API_PASSWORD=...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Listar cursos
+- Crear, actualizar y eliminar cursos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Integración de Herramientas de Inteligencia Artificial en el Desarrollo del Frontend
 
-To learn more about Next.js, take a look at the following resources:
+Durante el desarrollo del frontend, se integró inteligencia artificial para acelerar y mejorar el proceso de implementación. En particular, se utilizó GitHub Copilot para:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Autocompletado de código:** Acelerando la escritura y optimización de funciones en el desarrollo.
+- **Migración de variables de entorno y generación de archivos:** Automatizando la migración de variables importantes, la creación del `Dockerfile` y la implementación del CRUD.
+- **Generación de mensajes de commit:** Contribuyendo a mantener un historial de cambios claro y estructurado.
+- **Redacción de instrucciones del README:** Facilitando la elaboración de secciones y documentación detallada del proyecto.
+- **Refactorización de page.tsx:** Ayudando a dividir la página principal en componentes reutilizables para mejorar la mantenibilidad del código.
+- **Modificación rápida de componentes:** Permitiendo realizar ajustes ligeros en componentes de forma eficiente.
